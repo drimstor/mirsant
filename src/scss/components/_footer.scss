@@ -1,0 +1,52 @@
+.footer {
+  padding-top: 50px;
+  position: relative;
+  &__img {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &__links {
+    margin-top: 25px;
+    a {
+        margin-right: 10px;
+    }
+  }
+  &__phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    p {
+        margin-left: 5px;
+        color: $blue;
+        margin-bottom: 5px;
+    }
+  }
+  &__wrap {
+    background: rgb(238, 238, 238);
+    position: relative;
+    top: 230px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 30px 50px;
+    color: grey;
+    text-align: left;
+    h4 {
+      color: $black;
+      margin-bottom: 10px;
+    }
+    li {
+        margin-bottom: 3px;
+    }
+    a {
+        transition: all 0.2s;
+    }
+    a:hover {
+      color: $blue;
+      transition: all 0.2s;
+    }
+  }
+}

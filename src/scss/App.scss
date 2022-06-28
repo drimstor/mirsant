@@ -1,0 +1,56 @@
+@import "nullstyle";
+@import "./variables";
+@import "fonts/Gilroy/gilroy";
+
+@import "components/all";
+
+body {
+  font-family: "Gilroy-Medium";
+  color: $black;
+}
+
+.wrapper {
+  width: calc(100vw - 100px);
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.App {
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

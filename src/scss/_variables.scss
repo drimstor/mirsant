@@ -1,0 +1,27 @@
+$black: #232323;
+$blue: #21578a;
+
+$fzsm: 13px;
+$fz: 16px;
+
+
+
+
+@mixin text($f, $lh)
+{
+	font-size: $f;
+	line-height: $lh;
+}
+
+@mixin size($w, $h)
+{
+	width: $w;
+	height: $h;
+}
+
+
+%bold
+{
+    font-family: 'Gilroy-Bold';
+}
+

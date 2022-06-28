@@ -1,0 +1,65 @@
+.breadcrumbs {
+  padding: 15px 40px;
+  a {
+    color: $black;
+    transition: all 0.2s;
+  }
+  a:hover {
+    color: $blue;
+    transition: all 0.2s;
+  }
+}
+
+.card-item {
+  .carousel-root {
+    width: 500px;
+    margin-left: 130px;
+  }
+  .slider {
+    box-shadow: none;
+  }
+  .thumbs-wrapper {
+    position: relative;
+    top: -390px;
+    left: -115px;
+    .thumbs {
+      display: flex;
+      flex-direction: column;
+      li {
+        margin-bottom: 5px;
+        border-radius: 5px;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      li:hover {
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+      li.selected {
+        border: 2px solid $blue;
+        border-radius: 5px;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+.card-item {
+  &__title {
+   text-align: left;
+   padding-left: 35px;
+   padding-top: 30px;
+   font-size: 14px;
+   font-family: 'Gilroy-UltraLight';
+   position: relative;
+   .item-mini--mod {
+      font-family: 'Gilroy-Medium';
+      top: 5px;
+      left: 35px;
+   }
+  }
+  &__img {
+  }
+}

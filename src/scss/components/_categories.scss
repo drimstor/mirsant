@@ -1,0 +1,198 @@
+@import "../variables";
+
+.categories__body {
+    background: $blue;
+    height: 50px;
+    position: relative;
+  }
+
+.categories__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  font-family: "Gilroy-SemiBold";
+  color: rgb(255, 255, 255);
+  li {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-right: 1px solid rgba(255, 255, 255, 0.178);
+    border-left: 1px solid rgba(255, 255, 255, 0.178);
+  }
+  li:hover {
+    background: rgba(255, 255, 255, 0.178);
+    transition: all 0.2s;
+  }
+}
+
+.categories__menu-wrap {
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  left: -1px;
+  padding-top: 20px;
+  background: transparent;
+  width: 300px;
+  display: flex;
+  transition: all 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  .categories__menu-list {
+    position: relative;
+    background: $blue;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding: 10px 0;
+    font-family: "Gilroy-SemiBold";
+    color: white;
+    -webkit-box-shadow: 0px 3px 8px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 3px 8px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 3px 8px 1px rgba(34, 60, 80, 0.2);
+    li {
+      height: 50px;
+      width: 100%;
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 18px;
+      border: none;
+    }
+    a {
+      margin-left: 15px;
+      font-size: 15px;
+      color: white;
+    }
+    li:hover {
+      background: rgba(255, 255, 255, 0.178);
+      color: rgb(93, 223, 255);
+      transition: all 0.2s;
+    }
+  }
+}
+
+.categories__list  .categories__menu-wrap  .categories__menu-list li{
+    padding-left: 5px;
+}
+.categories__list > .allProductsBtn > .categories__menu-wrap > .categories__menu-list li{
+    padding-left: 20px;
+}
+
+.categories__menu-wrap:before {
+    content: "";
+    position: absolute;
+    border: solid $blue;
+    border-width: 0 6px 6px 0;
+    padding: 4px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    top: 15px;
+    left: 60px;
+  }
+
+// -----------------------------------------------
+
+.allProductsBtn {
+  position: relative;
+  margin-left: 0px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.allProductsBtn::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition: transform 0.2s;
+  z-index: 0;
+}
+
+.allProductsBtn:hover::after {
+  top: 24px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transition: transform 0.2s;
+}
+
+// -----------------------------------------------
+
+.categories__menu-list .categories__global-list {
+  position: absolute;
+  top: 0px;
+  padding: 10px 0;
+  right: -300px;
+  height: 420px;
+  background: rgb(255, 255, 255);
+  width: 300px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0px 3px 8px 1px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 3px 8px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 3px 8px 1px rgba(34, 60, 80, 0.2);
+
+  li a {
+    color: $black;
+    margin-left: 0px;
+  }
+
+  li:hover {
+    background: $blue;
+    color: white;
+  }
+  li:hover a {
+    color: white;
+  }
+}
+
+.categoryli {
+  color: $black;
+  font-family: "Gilroy-Bold";
+  font-size: 25px;
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 10px;
+  height: 50px;
+  cursor: default;
+}
+
+// -----------------------------------------------
+
+.categories__menu-list > li:hover .categories__global-list {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.categories__list > li:hover .categories__menu-wrap {
+  transition: all 0.2s;
+  opacity: 1;
+  visibility: visible;
+}
+
+// -----------------------------------------------
+
+.bathBtnAside,
+.showerBtnAside,
+.accessoryBtnAside,
+.furnitureBtnAside,
+.tileBtnAside,
+.sinkBtnAside {
+  position: relative;
+}
