@@ -3,6 +3,7 @@ import logo from "../assets/img/LOGO_4.png";
 import logoBlack from "../assets/img/LOGO_5.png";
 
 import { CartBtn } from "./";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
@@ -49,7 +50,9 @@ function Header() {
       </div>
       <div className="header">
         <div className="header__logo">
-          <img height={40} src={logo} alt="logo" />
+          <Link to="/">
+            <img height={40} src={logo} alt="logo" />
+          </Link>
         </div>
         <div className="header__search">
           <div className="seacrh-form">

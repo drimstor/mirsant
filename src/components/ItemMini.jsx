@@ -8,14 +8,14 @@ import {
 } from "@mui/icons-material";
 import Button from "@mui/material/Button";
 
-function ItemMini({ fresh, img, fall, title, price, newPrice }) {
+function ItemMini({ fresh, img, fall, title, price, newPrice, onClick  }) {
   return (
     <div className="list-items__item item-mini">
       {fresh && <div className="item-mini--mod item-mini--fresh">новинка</div>}
       {fall && (
         <div className="item-mini--mod item-mini--fall">цена снижена</div>
       )}
-      <div className="item-mini__img">
+      <div className="item-mini__img"  onClick={onClick}>
         <img src={img} alt="Item-photo" />
       </div>
       <div className="item-mini__title">

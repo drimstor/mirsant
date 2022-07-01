@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useNavigate, Link, BrowserRouter as Router } from "react-router-dom";
+
 import {
   NavigateNext,
   FavoriteBorder,
@@ -14,28 +16,21 @@ import {
   Circle,
 } from "@mui/icons-material";
 
-import {
-  Breadcrumbs,
-  Typography,
-  Link,
-  Button,
-} from "@mui/material";
+import { Breadcrumbs, Typography, Button } from "@mui/material";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import Zoom from "react-img-zoom";
 
-import img1 from "../assets/items/Alushta/Алушта_View01.png";
-import img2 from "../assets/items/Alushta/Алушта_View02.png";
-import img3 from "../assets/items/Alushta/Алушта_View03.png";
-import img4 from "../assets/items/Alushta/Алушта_View04.png";
-
 import CardItemsList from "./CardItemsList";
 
 function CardItem({
   fresh,
-  img,
+  img1,
+  img2,
+  img3,
+  img4,
   fall,
   title,
   price,
@@ -44,27 +39,22 @@ function CardItem({
   fabric,
   model,
 }) {
+  const navigate = useNavigate();
+  const redirect = (src) => {
+    window.scrollTo(0, 0);
+    return navigate(src);
+  };
   const breadcrumbs = [
     <Link
-      underline="hover"
-      key="1"
-      href="/"
-      fontSize={13}
-      fontFamily={"Gilroy-Medium"}
-      // onClick={handleClick}
+      to="/"
+      onClick={() => {
+        redirect("/");
+      }}
     >
       Главная
     </Link>,
-    <Link
-      underline="hover"
-      key="2"
-      href="/bath/"
-      fontSize={13}
-      fontFamily={"Gilroy-Medium"}
-      //   onClick={handleClick}
-    >
-      Ванны
-    </Link>,
+
+    <Link to="/bath/">Ванны</Link>,
     <Typography
       key="3"
       color="rgb(150, 150, 150)"
@@ -74,7 +64,6 @@ function CardItem({
       Ванна акриловая MIRSANT "Premium"
     </Typography>,
   ];
-
   return (
     <div className="wrapper">
       <Breadcrumbs

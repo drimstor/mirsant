@@ -1,0 +1,59 @@
+[
+  {
+    "id": 0,
+    "title": "Ванна акриловая MIRSANT 'Premium'",
+    "price": "29 100",
+    "isFresh": true,
+    "isFall": false,
+    "productcode": "УТ000065135",
+    "fabric": "MIRSANT",
+    "model": "кВО17070",
+    "img1": "https://i.ibb.co/WfzGjGm/Pond-View01.png",
+    "img2": "https://i.ibb.co/6XPwh8y/Pond-View05.png",
+    "img3": "https://i.ibb.co/grjgq8Y/Pond-View06.png",
+    "img4": "https://i.ibb.co/0Yvc7nS/Pond-170-1.png"
+  },
+  {
+    "id": 0,
+    "title": "Ванна акриловая MIRSANT 'АЛУШТА'",
+    "price": "16 900",
+    "isFresh": true,
+    "isFall": false,
+    "productcode": "УТ000065135",
+    "fabric": "MIRSANT",
+    "model": "кВО17070",
+    "img1": "https://i.ibb.co/JjWR0dz/View01.png",
+    "img2": "https://i.ibb.co/tx8ZzjR/View02.png",
+    "img3": "https://i.ibb.co/fHG58xm/View03.png",
+    "img4": "https://i.ibb.co/8YJ6vPB/View01.png"
+  },
+  {
+    "id": 0,
+    "title": "Ванна акриловая MIRSANT 'Sigma'",
+    "price": "74 900",
+    "isFresh": true,
+    "isFall": false,
+    "productcode": "УТ000065135",
+    "fabric": "MIRSANT",
+    "model": "кВО17070",
+    "img1": "https://i.ibb.co/tDnP05V/Sigma-View01.png",
+    "img2": "https://i.ibb.co/qm17bDN/Sigma-View02.jpg",
+    "img3": "https://i.ibb.co/zPhMwJB/Sigma-View04.png",
+    "img4": "https://i.ibb.co/jZvzqGP/Sigma-View05.png"
+  },
+  {
+    "id": 0,
+    "title": "Ванна акриловая MIRSANT 'МАССАНДРА'",
+    "price": "31 600",
+    "newPrice": "26 700",
+    "isFresh": true,
+    "isFall": false,
+    "productcode": "УТ000065135",
+    "fabric": "MIRSANT",
+    "model": "кВО17070",
+    "img1": "https://i.ibb.co/qJBNyZY/V2-View05.png",
+    "img2": "https://i.ibb.co/M1MK5XQ/V2-View01.png",
+    "img3": "https://i.ibb.co/GdPr2fj/V2-View02.png",
+    "img4": "https://i.ibb.co/6wZpHTM/View03.png"
+  }
+]
