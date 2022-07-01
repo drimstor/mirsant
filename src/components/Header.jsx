@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/img/LOGO_4.png";
 import logoBlack from "../assets/img/LOGO_5.png";
 
@@ -15,7 +15,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Header(props) {
+function Header() {
   return (
     <div className="wrapper">
       <div className="sup-header">

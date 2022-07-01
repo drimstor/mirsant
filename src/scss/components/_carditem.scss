@@ -13,18 +13,19 @@
 .card-item {
   .carousel-root {
     width: 500px;
-    margin-left: 130px;
+    .slide {
+      cursor: pointer;
+      img {
+        display: none;
+      }
+    }
   }
   .slider {
     box-shadow: none;
   }
   .thumbs-wrapper {
     position: relative;
-    top: -390px;
-    left: -115px;
     .thumbs {
-      display: flex;
-      flex-direction: column;
       li {
         margin-bottom: 5px;
         border-radius: 5px;
@@ -47,19 +48,299 @@
 }
 
 .card-item {
+  display: flex;
+  padding: 0 35px;
+  &__recommend {
+    > h2 {
+      font-size: 30px;
+      font-family: "Gilroy-Medium";
+      margin-top: 55px;
+      margin-bottom: 35px;
+      padding-left: 30px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 30px;
+        bottom: -10px;
+        width: 120px;
+        height: 5px;
+        background-color: $blue;
+      }
+    }
+  }
   &__title {
-   text-align: left;
-   padding-left: 35px;
-   padding-top: 30px;
-   font-size: 14px;
-   font-family: 'Gilroy-UltraLight';
-   position: relative;
-   .item-mini--mod {
-      font-family: 'Gilroy-Medium';
+    text-align: left;
+    padding-left: 35px;
+    padding-top: 35px;
+    font-size: 14px;
+    font-family: "Gilroy-UltraLight";
+    position: relative;
+    .item-mini--mod {
+      font-family: "Gilroy-Medium";
       top: 5px;
       left: 35px;
-   }
+    }
   }
-  &__img {
+  &__description {
+    margin-left: 150px;
+    width: 55%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__like-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: auto;
+    a {
+      display: flex;
+      align-items: center;
+      color: rgb(150, 150, 150);
+      font-size: 13px;
+      transition: 0.2s all;
+      margin-left: 25px;
+    }
+    p {
+      color: rgb(150, 150, 150);
+      font-size: 13px;
+    }
+    a:hover {
+      color: $blue;
+      transition: 0.2s all;
+    }
+    svg {
+      font-size: 17px;
+      margin-right: 3px;
+    }
+    a:nth-child(odd) svg {
+      font-size: 22px;
+    }
+  }
+  &__price h3 {
+    margin-top: 40px;
+    font-size: 38px;
+    font-family: "Gilroy-Bold";
+  }
+  &__cart-btns {
+    width: 100%;
+    margin-top: 35px;
+    .item-mini__add-cart--btn {
+      width: 300px;
+      height: 50px;
+      font-family: "Gilroy-Medium";
+      &:hover {
+        font-family: "Gilroy-Medium";
+      }
+    }
+    .item-mini__add-cart {
+      width: 100%;
+      justify-content: start;
+    }
+    .item-mini__counter--counter {
+      margin: auto 25px;
+    }
+    .item-mini__counter {
+      width: auto;
+      margin-right: 25px;
+      &--counter {
+        font-size: 30px;
+      }
+      .MuiButtonBase-root.item-mini__counter--btn {
+        min-width: 50px;
+        height: 50px;
+        svg {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  &__ship {
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      svg {
+        margin-right: 5px;
+        font-size: 20px;
+      }
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__in-stock {
+    ul li a {
+      color: $blue;
+      font-family: "Gilroy-Medium";
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    svg {
+      font-size: 10px;
+      color: #52b943;
+      margin-right: 5px;
+    }
+    h4 {
+      font-family: "Gilroy-Medium";
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  &__feature {
+    padding: 0 35px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    
+    h2 {
+      font-size: 30px;
+      font-family: "Gilroy-Medium";
+      padding-left: 15px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 15px;
+        bottom: -12px;
+        width: 120px;
+        height: 5px;
+        background-color: $blue;
+      }
+    }
+    p {
+      margin: 30px 0;
+      text-align: left;
+      line-height: 40px;
+      font-size: 17px;
+    }
+    .card-item__table {
+      margin-top: 30px;
+      width: 80%;
+      text-align: left;
+      color: $black;
+      p {
+        margin: 0;
+        width: auto;
+        display: inline-block;
+        background-color: #fff;
+        padding-right: 3px;
+      }
+      tr {
+        height: 25px;
+      }
+      td {
+        width: 60%;
+        height: 25px;
+        position: relative;
+        background-color: #fff;
+        font-size: 18px;
+        &::after {
+          border-bottom: 1px dotted #c2c2c2;
+          content: " ";
+          display: block;
+          width: 100%;
+          margin-top: -12px;
+          white-space: nowrap;
+          overflow: hidden;
+          z-index: 1;
+        }
+      }
+      td:nth-child(2n) {
+        width: 30%;
+
+        &::after {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  
+}
+
+.hl {
+  width: 100%;
+  height: 1px;
+  background: rgba(150, 150, 150, 0.507);
+  margin: 30px 0;
+}
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+  position: absolute;
+  top: 40%;
+  span {
+    font-size: 40px;
+    color: $blue;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    transition: all 0.3s;
+   
+    &:before {
+      content: "\276F";
+      margin-top: -3px;
+      margin-left: 2px;
+    }
+    &::after {
+      display: none;
+    }
+    &:hover {
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.alice-carousel__prev-btn-item {
+  span {
+    &:before {
+      content: "\276E";
+      margin-right: 3px;
+    }
+  }
+}
+
+.alice-carousel__prev-btn-item {
+  left: -75px;
+}
+.alice-carousel__next-btn-item {
+  right: -75px;
+}
+.alice-carousel__wrapper {
+  position: relative;
+
+  .alice-carousel__next-btn-item {
+    position: absolute;
+    left: 0;
+  }
+  .item-mini {
+    width: auto;
+    margin: 0 10px;
+    h3 {
+      font-size: 16px;
+      text-align: center;
+      padding: 0 5px;
+    }
   }
 }

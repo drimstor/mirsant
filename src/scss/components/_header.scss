@@ -49,19 +49,78 @@
   padding: 25px 50px;
   background: rgb(33, 87, 138);
   background: white;
-}
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  &__search {
+    height: 50px;
+    width: 35%;
+    border-radius: 30px;
+  }
+  &__cart {
+    display: flex;
+  }
+  &__cart-wrap {
+    border: $blue 2px solid;
+    border-radius: 50%;
+    @include size(50px, 50px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: $blue;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  &__cart-counter {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    @include size(20px, 20px);
+    background: #dddddd;
+    border-radius: 50%;
+    color: $blue;
+    font-size: 15px;
+    @extend %bold;
+    border: $blue 1px solid;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__cart-wrap:hover {
+    color: $black;
+    border: $black 2px solid;
+    transition: all 0.2s;
+  }
 
-.header__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 10px;
-}
+  &__cart-wrap:hover &__cart-counter {
+    color: $black;
+    border: $black 1px solid;
+    transition: all 0.2s;
+  }
 
-.header__search {
-  height: 50px;
-  width: 35%;
-  border-radius: 30px;
+  &__info {
+    color: $blue;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Gilroy-Medium';
+    .phone {
+      margin-left: 10px;
+    }
+  }
+
+  &__info:hover {
+    color: $black;
+    transition: all 0.2s;
+  }
 }
 
 .search-form__wrap {
@@ -94,71 +153,11 @@
   }
 }
 
-.search-form__wrap:hover{
+.search-form__wrap:hover {
   border: $black 2px solid;
   transition: all 0.2s;
   .svg-search {
     color: $black;
     transition: all 0.2s;
   }
-}
-
-.header__cart {
-  display: flex;
-}
-
-.header__cart-wrap {
-  border: $blue 2px solid;
-  border-radius: 50%;
-  @include size(50px, 50px);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  color: $blue;
-  cursor: pointer;
-  transition: all 0.2s;
-  .header__cart-counter {
-    position: absolute;
-    right: -5px;
-    top: -5px;
-    @include size(20px, 20px);
-    background: #dddddd;
-    border-radius: 50%;
-    color: $blue;
-    font-size: 15px;
-    @extend %bold;
-    border: $blue 1px solid;
-    transition: all 0.2s;
-  }
-}
-
-.header__cart-wrap:hover {
-  color: $black;
-  border: $black 2px solid;
-  transition: all 0.2s;
-}
-
-.header__cart-wrap:hover .header__cart-counter {
-  color: $black;
-  border: $black 1px solid;
-  transition: all 0.2s;
-}
-
-.header__info {
-  color: $blue;
-  font-size: 25px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  .phone {
-    margin-left: 10px;
-  }
-}
-
-.header__info:hover {
-  color: $black;
-  transition: all 0.2s;
 }

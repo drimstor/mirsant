@@ -14,7 +14,7 @@ function ItemPage() {
     <>
       <Header />
       <Categories />
-      <CardItem fresh title={'Ванна акриловая MIRSANT "Premium"'} />
+      <CardItem fresh price={'29 100'} title={'Ванна акриловая MIRSANT "Premium"'} productcode={'УТ000065135'} fabric={'MIRSANT'} model={'кВО17070'} />
       <Footer />
     </>
   );

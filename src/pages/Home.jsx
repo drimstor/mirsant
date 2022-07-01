@@ -1,12 +1,14 @@
 import React from "react";
+
 import {
   Header,
   Categories,
   Slider,
-  ListItems,
   Footer,
   About,
+  CardItemsList
 } from "../components";
+
 
 function Home() {
   return (
@@ -14,9 +16,9 @@ function Home() {
       <Header />
       <Categories />
       <Slider />
-      <ListItems title={"Хиты продаж"} />
+      <CardItemsList title={"Хиты продаж"} />
       <About />
-      <ListItems title={"Новинки на сайте"} />
+      <CardItemsList title={"Новинки на сайте"} />
       <Footer />
     </>
   );

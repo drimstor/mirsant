@@ -11,7 +11,7 @@ function About({}) {
   return (
     <div className="wrapper">
       <div className="about">
-        <h2>Наши преимущества:</h2>
+        <h2>Наши преимущества</h2>
         <div className="about__container">
           <div className="about__item">
             <div className="about__wrap">
