@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from 'react';
 
-import { useNavigate, Link, BrowserRouter as Router } from "react-router-dom";
+import { useNavigate, Link, BrowserRouter as Router } from 'react-router-dom';
 
 import {
   NavigateNext,
@@ -14,16 +14,16 @@ import {
   ShoppingCart,
   LocalShipping,
   Circle,
-} from "@mui/icons-material";
+} from '@mui/icons-material';
 
-import { Breadcrumbs, Typography, Button } from "@mui/material";
+import { Breadcrumbs, Typography, Button } from '@mui/material';
 
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import Zoom from "react-img-zoom";
+import Zoom from 'react-img-zoom';
 
-import CardItemsList from "./CardItemsList";
+import CardItemsList from './CardItemsList';
 
 function CardItem({
   fresh,
@@ -44,23 +44,34 @@ function CardItem({
     window.scrollTo(0, 0);
     return navigate(src);
   };
+
+  let [counter, setCounter] = useState(1);
+  function increment() {
+    setCounter(counter + 1);
+  }
+  function decrement() {
+    if (counter > 1) {
+      setCounter(counter - 1);
+    }
+  }
+
+  function prettify(price, counter) {
+    let num = price * counter;
+    let n = num.toString();
+    return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ');
+  }
+
   const breadcrumbs = [
     <Link
       to="/"
       onClick={() => {
-        redirect("/");
-      }}
-    >
+        redirect('/');
+      }}>
       Главная
     </Link>,
 
     <Link to="/bath/">Ванны</Link>,
-    <Typography
-      key="3"
-      color="rgb(150, 150, 150)"
-      fontSize={13}
-      fontFamily={"Gilroy-Medium"}
-    >
+    <Typography key="3" color="rgb(150, 150, 150)" fontSize={13} fontFamily={'Gilroy-Medium'}>
       Ванна акриловая MIRSANT "Premium"
     </Typography>,
   ];
@@ -69,65 +80,31 @@ function CardItem({
       <Breadcrumbs
         className="breadcrumbs"
         separator={<NavigateNext fontSize="small" />}
-        aria-label="breadcrumb"
-      >
+        aria-label="breadcrumb">
         {breadcrumbs}
       </Breadcrumbs>
       <div className="card-item__title">
-        {fresh && (
-          <div className="item-mini--mod item-mini--fresh">новинка</div>
-        )}
-        {fall && (
-          <div className="item-mini--mod item-mini--fall">цена снижена</div>
-        )}
+        {fresh && <div className="item-mini--mod item-mini--fresh">новинка</div>}
+        {fall && <div className="item-mini--mod item-mini--fall">цена снижена</div>}
         <h1>{title}</h1>
       </div>
       <div className="card-item">
         <div className="card-item__img">
-          <Carousel
-            showStatus={false}
-            showIndicators={false}
-            swipeable
-            showArrows={false}
-          >
+          <Carousel showStatus={false} showIndicators={false} swipeable showArrows={false}>
             <div>
-              <Zoom
-                img={img1}
-                zoomScale={1.8}
-                width={500}
-                height={500}
-                transitionTime={0.3}
-              />
+              <Zoom img={img1} zoomScale={1.8} width={500} height={500} transitionTime={0.3} />
               <img src={img1} />
             </div>
             <div>
-              <Zoom
-                img={img2}
-                zoomScale={1.8}
-                width={500}
-                height={500}
-                transitionTime={0.3}
-              />
+              <Zoom img={img2} zoomScale={1.8} width={500} height={500} transitionTime={0.3} />
               <img src={img2} />
             </div>
             <div>
-              <Zoom
-                img={img3}
-                zoomScale={1.8}
-                width={500}
-                height={500}
-                transitionTime={0.3}
-              />
+              <Zoom img={img3} zoomScale={1.8} width={500} height={500} transitionTime={0.3} />
               <img src={img3} />
             </div>
             <div>
-              <Zoom
-                img={img4}
-                zoomScale={1.8}
-                width={500}
-                height={500}
-                transitionTime={0.3}
-              />
+              <Zoom img={img4} zoomScale={1.8} width={500} height={500} transitionTime={0.3} />
               <img src={img4} />
             </div>
           </Carousel>
@@ -148,7 +125,7 @@ function CardItem({
             </a>
           </div>
           <div className="card-item__price">
-            <h3>{price}₽</h3>
+            {fall ? <div className='card-item__discount'><h3 className='card-item__price--fall'>{prettify(newPrice,counter)}₽</h3><h3 className='card-item__price--old'>{prettify(price,counter)}₽</h3></div>  : <h3>{prettify(price,counter)}₽</h3>}
           </div>
           <div className="card-item__cart-btns">
             <div className="item-mini__add-cart">
@@ -157,12 +134,14 @@ function CardItem({
                   className="item-mini__counter--btn item-mini__counter--btn-minus"
                   variant="outlined"
                   startIcon={<Remove />}
+                  onClick={decrement}
                 />
-                <div className="item-mini__counter--counter">1</div>
+                <div className="item-mini__counter--counter">{counter}</div>
                 <Button
                   className="item-mini__counter--btn item-mini__counter--btn-plus"
                   variant="outlined"
                   startIcon={<Add />}
+                  onClick={increment}
                 />
               </div>
               <Button className="item-mini__add-cart--btn" variant="outlined">
@@ -220,8 +199,8 @@ function CardItem({
         <h2>Описание</h2>
         <p>
           Особенности ванны Sense: <br></br>
-          1. Премиальные технологии и материалы: литьевой акрил, вакуумная
-          формовка листа в алюминиевых формах.<br></br>
+          1. Премиальные технологии и материалы: литьевой акрил, вакуумная формовка листа в
+          алюминиевых формах.<br></br>
           2. Внутренние ребра жесткости для эргономичной посадки. <br></br>
           3. Сохраняет тепло на 30 минут дольше. <br></br>
           Каркас и панель для ванной приобретаются отдельно.
@@ -304,7 +283,7 @@ function CardItem({
           </tbody>
         </table>
       </div>
-      <CardItemsList title={"Похожие товары"} />
+      <CardItemsList title={'Похожие товары'} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ export { default as Categories } from './Сategories';
 export { default as CategoriesList } from './CategoriesList';
 export { default as CategoriesWrap } from './CategoriesWrap';
 export { default as Slider } from './Slider';
-export { default as ItemMini } from './ItemMini';
+export { default as CardItemMini } from './CardItemMini';
 export { default as Footer } from './Footer';
 export { default as About } from './About';
 export { default as CardItem } from './CardItem';

@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useState } from 'react';
 
-import {
-  FavoriteBorder,
-  CompareArrows,
-  Remove,
-  Add,
-} from "@mui/icons-material";
-import Button from "@mui/material/Button";
+import { FavoriteBorder, CompareArrows, Remove, Add } from '@mui/icons-material';
+import Button from '@mui/material/Button';
 
-function ItemMini({ fresh, img, fall, title, price, newPrice, onClick  }) {
+function CardItemMini({ fresh, img, fall, title, price, newPrice, onClick }) {
+  
+  let [counter, setCounter] = useState(1);
+  
+  function increment() {
+    setCounter(counter + 1);
+  }
+  function decrement() {
+    if (counter > 1) {
+      setCounter(counter - 1);
+    }
+  }
+  
+  function prettify(price, counter) {
+    let num = price * counter;
+    let n = num.toString();
+    return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ');
+  }
+
   return (
     <div className="list-items__item item-mini">
       {fresh && <div className="item-mini--mod item-mini--fresh">новинка</div>}
-      {fall && (
-        <div className="item-mini--mod item-mini--fall">цена снижена</div>
-      )}
-      <div className="item-mini__img"  onClick={onClick}>
+      {fall && <div className="item-mini--mod item-mini--fall">цена снижена</div>}
+      <div className="item-mini__img" onClick={onClick}>
         <img src={img} alt="Item-photo" />
       </div>
       <div className="item-mini__title">
@@ -25,11 +36,11 @@ function ItemMini({ fresh, img, fall, title, price, newPrice, onClick  }) {
         {fall ? (
           <div className="item-mini__price--wrap">
             <h2>
-              {newPrice}₽<p>{price}₽</p>
+            {prettify(newPrice,counter)}₽<p>{prettify(price,counter)}₽</p>
             </h2>
           </div>
         ) : (
-          <h2>{price}₽</h2>
+          <h2>{prettify(price,counter)}₽</h2>
         )}
 
         <div className="item-mini__like-btn">
@@ -47,12 +58,14 @@ function ItemMini({ fresh, img, fall, title, price, newPrice, onClick  }) {
             className="item-mini__counter--btn item-mini__counter--btn-minus"
             variant="outlined"
             startIcon={<Remove />}
+            onClick={decrement}
           />
-          <div className="item-mini__counter--counter">1</div>
+          <div className="item-mini__counter--counter">{counter}</div>
           <Button
             className="item-mini__counter--btn item-mini__counter--btn-plus"
             variant="outlined"
             startIcon={<Add />}
+            onClick={increment}
           />
         </div>
         <Button className="item-mini__add-cart--btn" variant="outlined">
@@ -63,4 +76,4 @@ function ItemMini({ fresh, img, fall, title, price, newPrice, onClick  }) {
   );
 }
 
-export default ItemMini;
+export default CardItemMini;

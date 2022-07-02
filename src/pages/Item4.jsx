@@ -11,8 +11,8 @@ function Item4() {
   return (
     <>
       <CardItem
-        price={"31 600"}
-        newPrice={"26 700"}
+        price={"31600"}
+        newPrice={"26700"}
         title={'Ванна акриловая MIRSANT "МАССАНДРА"'}
         productcode={"УТ000065135"}
         fabric={"MIRSANT"}

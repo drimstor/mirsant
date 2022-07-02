@@ -1,15 +1,15 @@
-import React from "react";
-import ItemMini from "./ItemMini";
+import React from 'react';
+import CardItemMini from './CardItemMini';
 
-import { useNavigate, BrowserRouter as Router } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/scss/alice-carousel.scss";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/scss/alice-carousel.scss';
 
-import item_img from "../assets/items/Pond/Pond__View01.png";
-import item_img2 from "../assets/items/Alushta/Алушта_View01.png";
-import item_img3 from "../assets/items/Sigma/Sigma__View01.png";
-import item_img4 from "../assets/items/Kappa/Массандра_V2__View05.png";
+import item_img from '../assets/items/Pond/Pond__View01.png';
+import item_img2 from '../assets/items/Alushta/Алушта_View01.png';
+import item_img3 from '../assets/items/Sigma/Sigma__View01.png';
+import item_img4 from '../assets/items/Kappa/Массандра_V2__View05.png';
 
 function CardItemsList({ title }) {
   const navigate = useNavigate();
@@ -18,49 +18,53 @@ function CardItemsList({ title }) {
     return navigate(src);
   };
 
-  const handleDragStart = (e) => e.preventDefault();
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 3 },
+    1024: { items: 4 },
+  };
 
   const items = [
-    <ItemMini
+    <CardItemMini
       img={item_img}
       title={'Ванна акриловая MIRSANT "Premium"'}
-      price={"29 100"}
+      price={'29100'}
       fresh
       onClick={() => {
-        redirect("/item1");
+        redirect('/item1');
       }}
     />,
-    <ItemMini
+    <CardItemMini
       img={item_img2}
       title={'Ванна акриловая MIRSANT "АЛУШТА"'}
-      price={"16 900"}
+      price={'16900'}
       fresh
       onClick={() => {
-        redirect("/item2");
+        redirect('/item2');
       }}
     />,
-    <ItemMini
+    <CardItemMini
       img={item_img3}
       title={'Ванна акриловая MIRSANT "Sigma"'}
-      price={"74 900"}
+      price={'74900'}
       onClick={() => {
-        redirect("/item3");
+        redirect('/item3');
       }}
     />,
-    <ItemMini
+    <CardItemMini
       img={item_img4}
       title={'Ванна акриловая MIRSANT "МАССАНДРА"'}
-      price={"31 600"}
-      newPrice={"26 700"}
+      price={'31600'}
+      newPrice={'26700'}
       fall
       onClick={() => {
-        redirect("/item4");
+        redirect('/item4');
       }}
     />,
   ];
 
   // const itemsMini = [
-  //   <ItemMini
+  //   <CardItemMini
   //     img={items[0].img1}
   //     title={items[0].title}
   //     price={items[0].price}
@@ -69,7 +73,7 @@ function CardItemsList({ title }) {
   //       redirect("/item");
   //     }}
   //   />,
-  //   <ItemMini
+  //   <CardItemMini
   //     img={items[1].img1}
   //     title={items[1].title}
   //     price={items[1].price}
@@ -78,7 +82,7 @@ function CardItemsList({ title }) {
   //       redirect("/item");
   //     }}
   //   />,
-  //   <ItemMini
+  //   <CardItemMini
   //     img={items[2].img1}
   //     title={items[2].title}
   //     price={items[2].price}
@@ -86,7 +90,7 @@ function CardItemsList({ title }) {
   //       redirect("/item");
   //     }}
   //   />,
-  //   <ItemMini
+  //   <CardItemMini
   //     img={items[3].img1}
   //     title={items[3].title}
   //     price={items[3].price}
@@ -98,12 +102,6 @@ function CardItemsList({ title }) {
   //   />,
   // ];
 
-  const responsive = {
-    0: { items: 1 },
-    568: { items: 3 },
-    1024: { items: 4 },
-  };
-
   return (
     <div className="wrapper">
       <div className="list-items">
@@ -112,7 +110,7 @@ function CardItemsList({ title }) {
           <AliceCarousel
             infinite
             disableDotsControls
-            className={"mini-carousel"}
+            className={'mini-carousel'}
             mouseTracking
             items={items}
             responsive={responsive}

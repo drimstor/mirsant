@@ -11,7 +11,7 @@ function Item3() {
   return (
     <>
       <CardItem
-        price={"74 900"}
+        price={"74900"}
         title={'Ванна акриловая MIRSANT "Sigma"'}
         productcode={"УТ000065135"}
         fabric={"MIRSANT"}

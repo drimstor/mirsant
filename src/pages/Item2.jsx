@@ -12,7 +12,7 @@ function Item2() {
     <>
       <CardItem
         fresh
-        price={"16 900"}
+        price={"16900"}
         title={'Ванна акриловая MIRSANT "АЛУШТА"'}
         productcode={"УТ000065135"}
         fabric={"MIRSANT"}
