@@ -28,6 +28,9 @@
   }
   .thumbs-wrapper {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .thumbs {
       li {
         margin-bottom: 5px;
